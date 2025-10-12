@@ -14,7 +14,129 @@ export type Database = {
   }
   public: {
     Tables: {
-      [_ in never]: never
+      providers: {
+        Row: {
+          id: string
+          npi_number: string
+          first_name: string | null
+          last_name: string | null
+          organization_name: string | null
+          provider_type: string | null
+          specialty: string | null
+          address_line1: string | null
+          address_line2: string | null
+          city: string | null
+          state: string | null
+          zip_code: string | null
+          phone: string | null
+          email: string | null
+          status: string
+          created_at: string
+          updated_at: string
+        }
+        Insert: {
+          id?: string
+          npi_number: string
+          first_name?: string | null
+          last_name?: string | null
+          organization_name?: string | null
+          provider_type?: string | null
+          specialty?: string | null
+          address_line1?: string | null
+          address_line2?: string | null
+          city?: string | null
+          state?: string | null
+          zip_code?: string | null
+          phone?: string | null
+          email?: string | null
+          status?: string
+          created_at?: string
+          updated_at?: string
+        }
+        Update: {
+          id?: string
+          npi_number?: string
+          first_name?: string | null
+          last_name?: string | null
+          organization_name?: string | null
+          provider_type?: string | null
+          specialty?: string | null
+          address_line1?: string | null
+          address_line2?: string | null
+          city?: string | null
+          state?: string | null
+          zip_code?: string | null
+          phone?: string | null
+          email?: string | null
+          status?: string
+          created_at?: string
+          updated_at?: string
+        }
+      }
+      verification_logs: {
+        Row: {
+          id: string
+          provider_id: string
+          verification_type: string
+          status: string
+          details: Json | null
+          verified_at: string
+          created_at: string
+        }
+        Insert: {
+          id?: string
+          provider_id: string
+          verification_type: string
+          status: string
+          details?: Json | null
+          verified_at?: string
+          created_at?: string
+        }
+        Update: {
+          id?: string
+          provider_id?: string
+          verification_type?: string
+          status?: string
+          details?: Json | null
+          verified_at?: string
+          created_at?: string
+        }
+      }
+      uploads: {
+        Row: {
+          id: string
+          filename: string
+          file_size: number | null
+          file_type: string | null
+          upload_status: string
+          processed_count: number
+          error_count: number
+          created_at: string
+          updated_at: string
+        }
+        Insert: {
+          id?: string
+          filename: string
+          file_size?: number | null
+          file_type?: string | null
+          upload_status?: string
+          processed_count?: number
+          error_count?: number
+          created_at?: string
+          updated_at?: string
+        }
+        Update: {
+          id?: string
+          filename?: string
+          file_size?: number | null
+          file_type?: string | null
+          upload_status?: string
+          processed_count?: number
+          error_count?: number
+          created_at?: string
+          updated_at?: string
+        }
+      }
     }
     Views: {
       [_ in never]: never
